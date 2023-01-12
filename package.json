@@ -33,6 +33,6 @@
   },
   "devDependencies": {
     "typescript": "^4.8.4",
-    "react": "file:../testbed/assets/node_modules/react"
+    "react": ">= 16.8.0"
   }
 }
