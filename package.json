@@ -1,6 +1,6 @@
 {
   "name": "use-live-state",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A react hook for LiveState",
   "module": "build/useLiveState.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "react": ">= 16.8.0"
   },
   "dependencies": {
-    "phx-live-state": "git://github.com/launchscout/phx-live-state"
+    "phx-live-state": ">= 0.9.0"
   },
   "devDependencies": {
     "typescript": "^4.8.4",
