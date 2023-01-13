@@ -5,7 +5,7 @@ const useLiveState = (liveState: LiveState, intialState: any) => {
   const [state, setState] = useState(intialState);
   useEffect(() => {
     liveState.connect();
-    const handleStateChange = ({detail: state}) => setState(state);
+    const handleStateChange = ({detail: {state}}) => setState(state);
     liveState.addEventListener('livestate-change', handleStateChange);
     return () => {
       liveState.removeEventListener('livestate-change', handleStateChange);
