@@ -1,5 +1,5 @@
 import LiveState from 'phx-live-state';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useLiveState = (liveState: LiveState, intialState: any) => {
   const [state, setState] = useState(intialState);
@@ -10,11 +10,11 @@ const useLiveState = (liveState: LiveState, intialState: any) => {
     return () => {
       liveState.removeEventListener('livestate-change', handleStateChange);
     };
-  });
+  }, [liveState]);
 
-  const pushEvent = (event, payload) => {
+  const pushEvent = useCallback((event: string, payload: any) => {
     liveState.pushEvent(event, payload);
-  }
+  }, [liveState]);
 
   return [state, pushEvent];
 }
